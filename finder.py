@@ -27,8 +27,11 @@ def main():
                 search(p, fen, file)
 
         read(p, fen) #get more games from csv file
+        p.sendline('exit')
         p.terminate()
     except KeyboardInterrupt:
+        p.sendline('exit')
+        p.terminate()
         sys.exit(0)
 
 def send(p, command):
